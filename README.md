@@ -6,7 +6,7 @@ Goal is to create an interactive plot to explore the relationship between age an
 
 Folder structure include - 
 * **D3_data_journalism** folder containing all relevant files, including - 
-    * **index.html** page for [interactive plot](https://yannchye.github.io/plotly-challenge/)
+    * **index.html** page for interactive plot
     * **/assets/data/** folder containing dataset file *data.csv*
     * **/assets/css/** folder containing stylesheets *d3style.css* and *style.css*
     * **/assets/js/** folder containing *app.js* javascript file for generating interactive plots using scalable vector graphics (SVG)
