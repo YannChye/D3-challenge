@@ -73,7 +73,7 @@ function renderCircles(circlesGroup,newXScale,chosenXAxis,newYScale,chosenYAxis)
     circlesGroup.transition()
         .duration(1000)
         .attr("cx",d=>newXScale(d[chosenXAxis]))
-        .attr("cy",d=>newYScale(d[chosenYAxis]));
+        .attr("cy",d=>newYScale(d[chosenYAxis])-3);
 
     return circlesGroup;
 }
@@ -189,8 +189,9 @@ d3.csv("./assets/data/data.csv").then(function(censusData) {
     .data(censusData)
     .enter()
     .append("text")
+    .classed("stateText",true)
     .attr("x",d=>xLinearScale(d[chosenXAxis]))
-    .attr("y",d=>yLinearScale(d[chosenYAxis])+3)
+    .attr("y",d=>yLinearScale(d[chosenYAxis])+2)
     .classed("stateText",true)
     .attr("font-size","8px")
     .text(d=>`${d.abbr}`);
@@ -203,6 +204,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData) {
     .attr("x",0)
     .attr("y",20)
     .attr("value","poverty")
+    .classed("aText",true)
     .classed("active",true)
     .text("In Poverty (%)");
 
@@ -210,6 +212,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData) {
     .attr("x",0)
     .attr("y",40)
     .attr("value","age")
+    .classed("aText",true)
     .classed("inactive",true)
     .text("Age (Median)");
 
@@ -217,6 +220,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData) {
     .attr("x",0)
     .attr("y",60)
     .attr("value","income")
+    .classed("aText",true)
     .classed("inactive",true)
     .text("Household Income (Median)");
 
@@ -228,6 +232,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData) {
     .attr("x",0-(chartHeight/2))
     .attr("y",-30)
     .attr("value","obesity")
+    .classed("aText",true)
     .classed("inactive",true)
     .text("Obese (%)");
 
@@ -235,6 +240,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData) {
     .attr("x",0-(chartHeight/2))
     .attr("y",-50)
     .attr("value","smokes")
+    .classed("aText",true)
     .classed("inactive",true)
     .text("Smokes (%)");
 
@@ -242,6 +248,7 @@ d3.csv("./assets/data/data.csv").then(function(censusData) {
     .attr("x",0-(chartHeight/2))
     .attr("y",-70)
     .attr("value","healthcare")
+    .classed("aText",true)
     .classed("active",true)
     .text("Lacks Healthcare (%)");
     
